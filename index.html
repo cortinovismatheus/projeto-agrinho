@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgroSmart - Gestão de Agronegócios</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <i class="fas fa-leaf"></i>
+                <span>AgroSmart</span>
+            </div>
+            <nav class="nav-menu">
+                <a href="#dashboard" class="nav-item active" data-section="dashboard">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="#culturas" class="nav-item" data-section="culturas">
+                    <i class="fas fa-seedling"></i>
+                    <span>Culturas</span>
+                </a>
+                <a href="#estoque" class="nav-item" data-section="estoque">
+                    <i class="fas fa-warehouse"></i>
+                    <span>Estoque</span>
+                </a>
+                <a href="#clima" class="nav-item" data-section="clima">
+                    <i class="fas fa-cloud-sun"></i>
+                    <span>Clima</span>
+                </a>
+                <a href="#relatorios" class="nav-item" data-section="relatorios">
+                    <i class="fas fa-file-alt"></i>
+                    <span>Relatórios</span>
+                </a>
+                <a href="#configuracoes" class="nav-item" data-section="configuracoes">
+                    <i class="fas fa-cog"></i>
+                    <span>Configurações</span>
+                </a>
+            </nav>
+            <div class="user-profile">
+                <img src="https://via.placeholder.com/40" alt="User">
+                <div class="user-info">
+                    <p>João Silva</p>
+                    <small>Produtor</small>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="header">
+                <div class="search-bar">
+                    <input type="text" placeholder="Buscar...">
+                    <i class="fas fa-search"></i>
+                </div>
+                <div class="header-icons">
+                    <button class="icon-btn">
+                        <i class="fas fa-bell"></i>
+                        <span class="badge">3</span>
+                    </button>
+                    <button class="icon-btn">
+                        <i class="fas fa-envelope"></i>
+                    </button>
+                </div>
+            </header>
+
+            <!-- Dashboard Section -->
+            <section id="dashboard" class="section active">
+                <h1>Dashboard</h1>
+                
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background: #e8f5e9;">
+                            <i class="fas fa-seedling" style="color: #4caf50;"></i>
+                        </div>
+                        <div class="stat-content">
+                            <p class="stat-label">Culturas Ativas</p>
+                            <p class="stat-value">8</p>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background: #fff3e0;">
+                            <i class="fas fa-bag" style="color: #ff9800;"></i>
+                        </div>
+                        <div class="stat-content">
+                            <p class="stat-label">Produção Total</p>
+                            <p class="stat-value">4.2k</p>
+                            <small>toneladas</small>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background: #e3f2fd;">
+                            <i class="fas fa-tractor" style="color: #2196f3;"></i>
+                        </div>
+                        <div class="stat-content">
+                            <p class="stat-label">Máquinas em Uso</p>
+                            <p class="stat-value">5</p>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background: #fce4ec;">
+                            <i class="fas fa-dollar-sign" style="color: #e91e63;"></i>
+                        </div>
+                        <div class="stat-content">
+                            <p class="stat-label">Receita Mês</p>
+                            <p class="stat-value">R$ 45k</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="charts-container">
+                    <div class="chart-box">
+                        <h3>Produção por Cultura (últimos 6 meses)</h3>
+                        <canvas id="produtionChart"></canvas>
+                    </div>
+
+                    <div class="chart-box">
+                        <h3>Distribuição de Culturas</h3>
+                        <canvas id="culturesChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="recent-activities">
+                    <h3>Atividades Recentes</h3>
+                    <div class="activity-list">
+                        <div class="activity-item">
+                            <div class="activity-icon" style="background: #e8f5e9;">
+                                <i class="fas fa-plus" style="color: #4caf50;"></i>
+                            </div>
+                            <div class="activity-content">
+                                <p class="activity-title">Nova cultura plantada</p>
+                                <small>Milho - 5 hectares</small>
+                                <p class="activity-time">Há 2 horas</p>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon" style="background: #fff3e0;">
+                                <i class="fas fa-harvest" style="color: #ff9800;"></i>
+                            </div>
+                            <div class="activity-content">
+                                <p class="activity-title">Colheita concluída</p>
+                                <small>Soja - 8 toneladas</small>
+                                <p class="activity-time">Há 1 dia</p>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon" style="background: #e3f2fd;">
+                                <i class="fas fa-wrench" style="color: #2196f3;"></i>
+                            </div>
+                            <div class="activity-content">
+                                <p class="activity-title">Manutenção agendada</p>
+                                <small>Trator JD 8400 - Próxima semana</small>
+                                <p class="activity-time">Há 3 dias</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Culturas Section -->
+            <section id="culturas" class="section">
+                <div class="section-header">
+                    <h1>Gerenciamento de Culturas</h1>
+                    <button class="btn-primary" id="addCulturaBtn">
+                        <i class="fas fa-plus"></i> Nova Cultura
+                    </button>
+                </div>
+
+                <div class="filters">
+                    <input type="text" placeholder="Buscar cultura..." id="searchCultura" class="filter-input">
+                    <select id="statusFilter" class="filter-select">
+                        <option value="">Todos os Status</option>
+                        <option value="em-crescimento">Em Crescimento</option>
+                        <option value="pronto-colheita">Pronto para Colheita</option>
+                        <option value="colhido">Colhido</option>
+                    </select>
+                </div>
+
+                <div class="culturas-grid" id="culturasGrid">
+                    <!-- Será preenchido por JavaScript -->
+                </div>
+            </section>
+
+            <!-- Estoque Section -->
+            <section id="estoque" class="section">
+                <div class="section-header">
+                    <h1>Gerenciamento de Estoque</h1>
+                    <button class="btn-primary" id="addEstoqueBtn">
+                        <i class="fas fa-plus"></i> Novo Item
+                    </button>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Produto</th>
+                                <th>Quantidade</th>
+                                <th>Unidade</th>
+                                <th>Localização</th>
+                                <th>Última Atualização</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody id="estoqueTableBody">
+                            <!-- Será preenchido por JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Clima Section -->
+            <section id="clima" class="section">
+                <h1>Informações de Clima</h1>
+                
+                <div class="weather-container">
+                    <div class="weather-current">
+                        <div class="weather-card">
+                            <h3>Clima Atual</h3>
+                            <div class="weather-info">
+                                <i class="fas fa-cloud-sun" style="font-size: 3rem; color: #ff9800;"></i>
+                                <div class="weather-details">
+                                    <p class="temperature">28°C</p>
+                                    <p class="condition">Parcialmente Nublado</p>
+                                    <p class="location">São Paulo, SP</p>
+                                </div>
+                            </div>
+                            <div class="weather-stats">
+                                <div class="weather-stat">
+                                    <small>Umidade</small>
+                                    <p>65%</p>
+                                </div>
+                                <div class="weather-stat">
+                                    <small>Vento</small>
+                                    <p>12 km/h</p>
+                                </div>
+                                <div class="weather-stat">
+                                    <small>Pressão</small>
+                                    <p>1013 mb</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="forecast-container">
+                        <h3>Previsão 7 Dias</h3>
+                        <div class="forecast-grid" id="forecastGrid">
+                            <!-- Será preenchido por JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Relatórios Section -->
+            <section id="relatorios" class="section">
+                <h1>Relatórios</h1>
+                
+                <div class="reports-grid">
+                    <div class="report-card">
+                        <div class="report-icon">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                        <h3>Produção Anual</h3>
+                        <p>Relatório completo de produção do ano</p>
+                        <button class="btn-secondary">Gerar</button>
+                    </div>
+
+                    <div class="report-card">
+                        <div class="report-icon">
+                            <i class="fas fa-dollar-sign"></i>
+                        </div>
+                        <h3>Receita e Despesas</h3>
+                        <p>Análise financeira mensal e anual</p>
+                        <button class="btn-secondary">Gerar</button>
+                    </div>
+
+                    <div class="report-card">
+                        <div class="report-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <h3>Saúde das Culturas</h3>
+                        <p>Análise de doenças e pragas detectadas</p>
+                        <button class="btn-secondary">Gerar</button>
+                    </div>
+
+                    <div class="report-card">
+                        <div class="report-icon">
+                            <i class="fas fa-droplet"></i>
+                        </div>
+                        <h3>Uso de Recursos</h3>
+                        <p>Consumo de água, fertilizantes e insumos</p>
+                        <button class="btn-secondary">Gerar</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Configurações Section -->
+            <section id="configuracoes" class="section">
+                <h1>Configurações</h1>
+                
+                <div class="settings-container">
+                    <div class="settings-section">
+                        <h3>Dados da Propriedade</h3>
+                        <form id="settingsForm">
+                            <div class="form-group">
+                                <label>Nome da Propriedade</label>
+                                <input type="text" value="Fazenda São João" class="form-input">
+                            </div>
+                            <div class="form-group">
+                                <label>Localização</label>
+                                <input type="text" value="São Paulo, SP" class="form-input">
+                            </div>
+                            <div class="form-group">
+                                <label>Área Total (hectares)</label>
+                                <input type="number" value="150" class="form-input">
+                            </div>
+                            <div class="form-group">
+                                <label>Tipo de Agricultura</label>
+                                <select class="form-input">
+                                    <option>Agricultura Familiar</option>
+                                    <option>Agronegócio</option>
+                                    <option>Orgânica</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn-primary">Salvar Alterações</button>
+                        </form>
+                    </div>
+
+                    <div class="settings-section">
+                        <h3>Preferências</h3>
+                        <div class="preference-item">
+                            <label>
+                                <input type="checkbox" checked>
+                                Notificações por Email
+                            </label>
+                        </div>
+                        <div class="preference-item">
+                            <label>
+                                <input type="checkbox" checked>
+                                Alertas de Clima
+                            </label>
+                        </div>
+                        <div class="preference-item">
+                            <label>
+                                <input type="checkbox">
+                                Modo Escuro
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Modal para nova cultura -->
+    <div id="culturaModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Adicionar Nova Cultura</h2>
+            <form id="culturaForm">
+                <div class="form-group">
+                    <label>Nome da Cultura</label>
+                    <input type="text" id="culturaNome" required class="form-input">
+                </div>
+                <div class="form-group">
+                    <label>Tipo</label>
+                    <select id="culturaTipo" required class="form-input">
+                        <option>Soja</option>
+                        <option>Milho</option>
+                        <option>Trigo</option>
+                        <option>Feijão</option>
+                        <option>Arroz</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Área (hectares)</label>
+                    <input type="number" id="culturaArea" required class="form-input">
+                </div>
+                <div class="form-group">
+                    <label>Data de Plantio</label>
+                    <input type="date" id="culturaData" required class="form-input">
+                </div>
+                <div class="form-group">
+                    <label>Status</label>
+                    <select id="culturaStatus" class="form-input">
+                        <option>em-crescimento</option>
+                        <option>pronto-colheita</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-primary">Adicionar</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+</body>
+</html>
