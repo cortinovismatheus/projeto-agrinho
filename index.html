@@ -5,42 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AgroSmart - Gestão de Agronegócios</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <div class="container">
         <!-- Sidebar -->
         <aside class="sidebar">
             <div class="logo">
-                <i class="fas fa-leaf"></i>
-                <span>AgroSmart</span>
-            </div>
+    <span class="emoji-icon">🌿</span>
+    <span>AgroSmart</span>
+</div>
             <nav class="nav-menu">
-                <a href="#dashboard" class="nav-item active" data-section="dashboard">
-                    <i class="fas fa-chart-line"></i>
-                    <span>Dashboard</span>
-                </a>
-                <a href="#culturas" class="nav-item" data-section="culturas">
-                    <i class="fas fa-seedling"></i>
-                    <span>Culturas</span>
-                </a>
-                <a href="#estoque" class="nav-item" data-section="estoque">
-                    <i class="fas fa-warehouse"></i>
-                    <span>Estoque</span>
-                </a>
-                <a href="#clima" class="nav-item" data-section="clima">
-                    <i class="fas fa-cloud-sun"></i>
-                    <span>Clima</span>
-                </a>
-                <a href="#relatorios" class="nav-item" data-section="relatorios">
-                    <i class="fas fa-file-alt"></i>
-                    <span>Relatórios</span>
-                </a>
-                <a href="#configuracoes" class="nav-item" data-section="configuracoes">
-                    <i class="fas fa-cog"></i>
-                    <span>Configurações</span>
-                </a>
-            </nav>
+    <a href="#dashboard" class="nav-item active" data-section="dashboard">
+        <span class="emoji-icon">📈</span>
+        <span>Dashboard</span>
+    </a>
+
+    <a href="#culturas" class="nav-item" data-section="culturas">
+        <span class="emoji-icon">🌱</span>
+        <span>Culturas</span>
+    </a>
+
+    <a href="#estoque" class="nav-item" data-section="estoque">
+        <span class="emoji-icon">🏭</span>
+        <span>Estoque</span>
+    </a>
+
+    <a href="#clima" class="nav-item" data-section="clima">
+        <span class="emoji-icon">☁️</span>
+        <span>Clima</span>
+    </a>
+
+    <a href="#relatorios" class="nav-item" data-section="relatorios">
+        <span class="emoji-icon">📊</span>
+        <span>Relatórios</span>
+    </a>
+
+    <a href="#configuracoes" class="nav-item" data-section="configuracoes">
+        <span class="emoji-icon">⚙️</span>
+        <span>Configurações</span>
+    </a>
+</nav>
             <div class="user-profile">
                 <img src="https://via.placeholder.com/40" alt="User">
                 <div class="user-info">
@@ -59,14 +63,15 @@
                     <i class="fas fa-search"></i>
                 </div>
                 <div class="header-icons">
-                    <button class="icon-btn">
-                        <i class="fas fa-bell"></i>
-                        <span class="badge">3</span>
-                    </button>
-                    <button class="icon-btn">
-                        <i class="fas fa-envelope"></i>
-                    </button>
-                </div>
+    <button class="icon-btn">
+        🔔
+        <span class="badge">3</span>
+    </button>
+
+    <button class="icon-btn">
+        ✉️
+    </button>
+</div>
             </header>
 
             <!-- Dashboard Section -->
@@ -116,17 +121,25 @@
                     </div>
                 </div>
 
-                <div class="charts-container">
-                    <div class="chart-box">
-                        <h3>Produção por Cultura (últimos 6 meses)</h3>
-                        <canvas id="produtionChart"></canvas>
-                    </div>
+<div class="charts-container">
+    <div class="chart-box">
+        <h3>Produção por Cultura (últimos 6 meses)</h3>
+        <canvas
+            id="productionChart"
+            width="700"
+            height="350">
+        </canvas>
+    </div>
 
-                    <div class="chart-box">
-                        <h3>Distribuição de Culturas</h3>
-                        <canvas id="culturesChart"></canvas>
-                    </div>
-                </div>
+    <div class="chart-box">
+        <h3>Distribuição de Culturas</h3>
+        <canvas
+            id="culturesChart"
+            width="400"
+            height="350">
+        </canvas>
+    </div>
+</div>
 
                 <div class="recent-activities">
                     <h3>Atividades Recentes</h3>
@@ -401,6 +414,6 @@
     </div>
 
     <script src="script.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <script src="graficos.js"></script>
 </body>
 </html>
